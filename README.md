@@ -291,6 +291,69 @@ If the DOM console reflects [{id: 1, content: 'test'}], then you are ready to go
 
 ## ACCESSIBILITY/USABILITY PRINCIPLES
 
+The basic principles of accessibility are: Perceivable, Operable, Understandable, and Robust.
+The basic principles of usability are: Meaningful, Usable, Reliable, and Functional.
+The basic design principles are Contrast, Repetition, Alignment, and Proximity.
+
+Different accessibility limitations include: physical, visual, auditory, cognitive, temporary. These may manifest in a variety of ways. Usage and understanding should never rely on a single sense.
+
+Below are guidelines for accessibility/UX design, but always remember that you are building websites for real humans! All humans are different, and consideration must be given to the target audience (ex: colors have different meanings in certain countries or industries).
+
+In index.html, ensure html tag reflects lang="en" attribute.
+While building your JSX, use semantic elements, landmark elements, and aria-label attributes as applicable.
+Content should follow a logical sequence and standard positioning conventions.
+All interactive elements (NavLink, input, select, button, a) should have a label tag describing the action and result, indicators on :focus and :active
+Required inputs are clearly indicated.
+Confirmation dialogs for potentially incorrect actions, especially warnings if action cannot be undone.
+Error messages should have clear description of what went wrong, how to correct the issue, and place the :focus back at the location the error begins.
+Use clear, standard language principals for element labeling.
+Use effective size and color contrast, and non-verbal icons, to enforce meaning.
+Create multiple avenues for page navigation ('Return to Top' on bottom of screen, 'Return to Login' on Register screen, etc)
+
+Test using screen reader
+Test using color-blindness simulator
+Test using keyboard-only navigation
+Test using extreme zooms (extra small and extra large)
+Test on mobile devices for overflow and touch-operability
+
+## RESPONSIVE DESIGN
+
+Ensure index.html reflects the following in the head:
+
+    <meta name="viewport" content="width=device-width, initial-scale=1 />
+
+In style.css, enter the following:
+
+    :root {
+        --primary-color: #00004d;
+        --secondary-color: #531200; 
+        --primary-font: Century Gothic, sans-serif;
+        --secondary-font: Garamond, serif;
+        --xs-breakpoint: 320px;
+        --sm-breakpoint: 480px;
+        --md-breakpoint: 720px;
+        --lg-breakpoint: 1080px;
+        --xl-breakpoint: 1620px;
+    }
+
+    {/* Smart Phones, approximately */}
+    @media only screen and (min-width: var(--xs-breakpoint)){}
+    {/* Tablets, approximately */}
+    @media only screen and (min-width: var(--sm-breakpoint)){}
+    {/* Laptops, approximately */}
+    @media only screen and (min-width: var(--md-breakpoint)){}
+    {/* Desktops, approximately */}
+    @media only screen and (min-width: var(--lg-breakpoint)){}
+    {/* Televisions */}
+    @media only screen and (min-width: var(--xl-breakpoint)){}
+
+Assigning the breakpoints in :root allows for the modification of these breakpoints without hunting through the file. The breakpoints provided in this file are a template and should be modified to the various widths where the design stops looking good, as device sizes will vary widely and continue to change.
+Directly under :root, design for the smallest device imaginable.
+Within each of the lower brackets, add only the design aspects that need to be changed (typically, this involves display, alignment, and anything measured in px [font, width, height]).
+You will likely need to use classes liberally to do this effectively.
+
+## TESTING
+
 Coming soon...
 
 ## VERSION CONTROL
