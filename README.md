@@ -301,6 +301,9 @@ Below are guidelines for accessibility/UX design, but always remember that you a
 
 In index.html, ensure html tag reflects lang="en" attribute.
 While building your JSX, use semantic elements, landmark elements, and aria-label attributes as applicable.
+
+    See index.html for example HTML landmark hierarchy
+
 Content should follow a logical sequence and standard positioning conventions.
 All interactive elements (NavLink, input, select, button, a) should have a label tag describing the action and result, indicators on :focus and :active
 Required inputs are clearly indicated.
